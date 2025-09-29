@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  min-width: 0;
+  min-height: 0;
+}
+
+body {
+  background: green;
+}
+
+@property --mask-size {
+  syntax: "<length>";
+  initial-value: 140vmax;
+  inherits: false;
+}
+
+.transition-wrapper {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  mask-image: url("/mask-circle.svg");
+  mask-size: var(--mask-size);
+  mask-repeat: no-repeat;
+  mask-position: 50% 50%;
+}
+
+.transition-wrapper.transitioning {
+  animation: maskFadeOut 2s ease-in-out forwards;
+}
+
+.transition-wrapper.entering {
+  animation: maskFadeIn 2s ease-in-out forwards;
+}
+
+@keyframes maskFadeOut {
+  0% {
+    --mask-size: 140vmax;
+  }
+  100% {
+    --mask-size: 0vmax;
+  }
+}
+
+@keyframes maskFadeIn {
+  0% {
+    --mask-size: 0vmax;
+  }
+  100% {
+    --mask-size: 140vmax;
+  }
+}
