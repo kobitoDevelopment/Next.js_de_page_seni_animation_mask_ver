@@ -15,7 +15,7 @@ import { useEffect, useState, useRef, useTransition, useCallback } from "react";
  *
  * 2. 退出アニメーション（maskFadeOut）の実行
  *    - isTransitioning = trueでCSSクラス.transitioningを適用
- *    - clip-pathが左から右へ収縮するアニメーション（2秒）が開始
+ *    - maskアニメーション（2秒）が開始
  *    - animationendイベントでanimationName === 'maskFadeOut'を確認
  *    - 確認後、startTransition内でrouter.push()を実行してページ遷移
  *
@@ -23,7 +23,7 @@ import { useEffect, useState, useRef, useTransition, useCallback } from "react";
  *    - usePathnameでURLパス変更を検知（= ページ遷移完了）
  *    - isFirstMountフラグで初回レンダリング時のアニメーションを防止
  *    - isEntering = trueでCSSクラス.enteringを適用
- *    - clip-pathが右から左へ展開するアニメーション（2秒）が開始
+ *    - maskアニメーション（2秒）が開始
  *    - animationendイベント完了後、すべての状態をリセット
  */
 
