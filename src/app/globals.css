@@ -20,11 +20,17 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
+  overflow-y: auto;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
   background: white;
   mask-image: url("/mask-circle.svg");
   mask-size: var(--mask-size);
   mask-repeat: no-repeat;
   mask-position: 50% 50%;
+}
+.transition-wrapper::-webkit-scrollbar {
+  display: none;
 }
 
 .transition-wrapper.transitioning {

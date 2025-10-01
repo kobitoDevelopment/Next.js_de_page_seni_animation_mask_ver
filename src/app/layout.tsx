@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <TransitionWrapper>
-          {children}
+          <div className="transition-inner">{children}</div>
         </TransitionWrapper>
       </body>
     </html>
